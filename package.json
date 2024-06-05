@@ -25,7 +25,8 @@
     "vercel:yolo": "yarn workspace @ss-2/nextjs vercel:yolo"
   },
   "dependencies": {
-    "postcss": "^8.4.38"
+    "postcss": "^8.4.38",
+    "vercel": "latest"
   },
   "devDependencies": {
     "daisyui": "^4.7.3",

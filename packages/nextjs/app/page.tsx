@@ -13,11 +13,14 @@ import { useDeployedContractInfo } from "~~/hooks/scaffold-stark/useDeployedCont
 import { multiplyTo1e18 } from "~~/utils/scaffold-stark/priceInWei";
 import { IntegerInput } from "~~/components/scaffold-stark/Input/IntegerInput";
 import { useTargetNetwork } from "~~/hooks/scaffold-stark/useTargetNetwork";
+import { decodeBigIntArrayToText } from "~~/utils/scaffold-stark/contractsData";
+import { byteArray } from "starknet-dev";
 
 function formatEther(weiValue: number) {
   const etherValue = weiValue / 1e18;
   return etherValue.toFixed(1);
 }
+
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
@@ -52,8 +55,6 @@ const Home: NextPage = () => {
     contractName: "Scaffold",
   });
 
-
-
   const { writeAsync: multicall } = useScaffoldMultiWriteContract({
     calls: [
       createContractCall("Eth", "approve", [Eth?.address, 5 * 10 ** 15]),
@@ -76,23 +77,28 @@ const Home: NextPage = () => {
     ],
   });
 
-
-
   const { targetNetwork } = useTargetNetwork();
   const { data: vendorContractData } = useDeployedContractInfo("Vendor");
 
   // Contract Read Actions
-  
+
   const { data: balanceOf } = useScaffoldReadContract({
     contractName: "Eth",
     functionName: "balanceOf",
     args: [connectedAddress ?? ""],
   });
+
   const { data: lastGreeting } = useScaffoldReadContract({
     contractName: "YourContract",
     functionName: "gretting",
     watch: true,
   });
+  
+  let greetingValue = "";
+  
+  if (lastGreeting) {
+    greetingValue = byteArray.stringFromByteArray(lastGreeting);
+  }
 
   const { data: nadaiBalance } = useScaffoldReadContract({
     contractName: "Nadai",
@@ -122,7 +128,6 @@ const Home: NextPage = () => {
     watch: true,
   });
 
-
   const { writeAsync: faucet } = useScaffoldMultiWriteContract({
     calls: [
       createContractCall("Nadai", "faucet", [connectedAddress, 5 * 10 ** 20]),
@@ -131,13 +136,11 @@ const Home: NextPage = () => {
     ],
   });
 
-
   const { writeAsync: transferVendor } = useScaffoldMultiWriteContract({
     calls: [
-      createContractCall( "YourToken", "faucet", [vendorContractData?.address ?? "", 10 * 10 ** 19]),
+      createContractCall("YourToken", "faucet", [vendorContractData?.address ?? "", 10 * 10 ** 19]),
     ],
   });
-
 
   const wrapInTryCatch =
     (fn: () => Promise<any>, errorMessageFnDescription: string) => async () => {
@@ -205,18 +208,9 @@ const Home: NextPage = () => {
         </button>
 
         <div className="flex flex-col items-center w-1/2">
-  <p className="block text-xl mt-0 mb-1 font-semibold">Last Greeting</p>
-  <span>
-    {lastGreeting && lastGreeting.length > 0 && lastGreeting[0].type === "core::byte_array::ByteArray"
-      ? lastGreeting[0].toString() // o cualquier otra propiedad que represente el valor de la ByteArray
-      : "No greeting available"}
-  </span>
-</div>
-
-
-
-
-
+          <p className="block text-xl mt-0 mb-1 font-semibold">Last Greeting</p>
+          <span>{greetingValue}</span>
+        </div>
 
         <button
           onClick={handleClick3}
@@ -226,24 +220,23 @@ const Home: NextPage = () => {
           Mint 500 Nai + 50 Pepe + 5 Scaffold
         </button>
         <div className="flex flex-col items-center w-1/2">
-            <p className="block text-xl mt-0 mb-1 font-semibold">You Nai Balance</p>
-            <span>
-              {nadaiBalance
-                ? `${formatEther(Number(nadaiBalance))} Nai`
-                : "0"}
-            </span>
-            <span>
-              {pepeBalance
-                ? `${formatEther(Number(pepeBalance))} Pepe`
-                : "0"}
-            </span>
-            <span>
-              {scaffoldBalance
-                ? `${formatEther(Number(scaffoldBalance))} Scaffold`
-                : "0"}
-            </span>
-          </div>
-    
+          <p className="block text-xl mt-0 mb-1 font-semibold">You Nai Balance</p>
+          <span>
+            {nadaiBalance
+              ? `${formatEther(Number(nadaiBalance))} Nai`
+              : "0"}
+          </span>
+          <span>
+            {pepeBalance
+              ? `${formatEther(Number(pepeBalance))} Pepe`
+              : "0"}
+          </span>
+          <span>
+            {scaffoldBalance
+              ? `${formatEther(Number(scaffoldBalance))} Scaffold`
+              : "0"}
+          </span>
+        </div>
 
         <button
           onClick={handleClick4}
@@ -253,13 +246,13 @@ const Home: NextPage = () => {
           Mint 100 Gold - Vendor
         </button>
         <div className="flex flex-col items-center w-1/2">
-            <p className="block text-xl mt-0 mb-1 font-semibold">Balance GOLD - Vendor</p>
-            <span>
-              {vendorBalance
-                ? `${formatEther(Number(vendorBalance))} GOLD`
-                : "0"}
-            </span>
-            </div>
+          <p className="block text-xl mt-0 mb-1 font-semibold">Balance GOLD - Vendor</p>
+          <span>
+            {vendorBalance
+              ? `${formatEther(Number(vendorBalance))} GOLD`
+              : "0"}
+          </span>
+        </div>
       </div>
     </>
   );
