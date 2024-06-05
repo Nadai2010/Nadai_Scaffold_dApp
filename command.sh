@@ -1,0 +1,1 @@
+yarn next:lint && yarn next:check-types && yarn format && yarn format:check
