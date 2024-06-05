@@ -88,7 +88,7 @@ const Home: NextPage = () => {
     args: [connectedAddress ?? ""],
   });
 
-  const { data: lastGreeting } = useScaffoldReadContract({
+  const { data: lastGreeting, error: greetingError } = useScaffoldReadContract({
     contractName: "YourContract",
     functionName: "gretting",
     watch: true,
@@ -96,9 +96,12 @@ const Home: NextPage = () => {
   
   let greetingValue = "";
   
-  if (lastGreeting) {
-    greetingValue = byteArray.stringFromByteArray(lastGreeting);
+  if (greetingError) {
+    console.error("Error fetching greeting:", greetingError);
+  } else if (lastGreeting) {
+    greetingValue = byteArray.stringFromByteArray(lastGreeting as any);
   }
+  
 
   const { data: nadaiBalance } = useScaffoldReadContract({
     contractName: "Nadai",
