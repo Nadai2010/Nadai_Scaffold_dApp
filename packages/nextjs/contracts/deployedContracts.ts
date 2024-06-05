@@ -7,7 +7,7 @@ const deployedContracts = {
   devnet: {
     YourContract: {
       address:
-        "0x050c5000a344ed5b66c6a6c27e834f13082cacd064503d01ea7c55c6bc0ca5f1",
+        "0x079bd7eeab6278b669f4c6b97892425dde55a6ee898228e444a2c2d756ce1fc3",
       abi: [
         {
           type: "impl",
@@ -261,7 +261,7 @@ const deployedContracts = {
     },
     Pepe: {
       address:
-        "0x039abe13d8b3a9954ee64b096a25179037e8cf489e1e9dc2418dea72ab7bec99",
+        "0x07ce5f38e80fe968f69d680cddd6b538522032642e3288bdc4f49a7db7d34dbe",
       abi: [
         {
           type: "impl",
@@ -665,7 +665,7 @@ const deployedContracts = {
     },
     Nadai: {
       address:
-        "0x02f2cd2ff996f35b911a8d9a3e72b0f73db56cefd527b699fcddfcee8fd47733",
+        "0x04a97ad381f55ff330822d2e2483a2a8988e1c14c7e6102dede66323ada188bb",
       abi: [
         {
           type: "impl",
@@ -1069,7 +1069,7 @@ const deployedContracts = {
     },
     Scaffold: {
       address:
-        "0x0411806a050e19e2b59e32aa25622fa48ea43ec4d8b55d087e15cf9156184b1e",
+        "0x0482cd4945c5ec9c0556b076d854fcf3cdb85ad183701a252b634f2f0511c855",
       abi: [
         {
           type: "impl",
@@ -1473,7 +1473,7 @@ const deployedContracts = {
     },
     YourToken: {
       address:
-        "0x02bc3f5fd825590982553c40f2a6502729b9df4e22743e2adc89a51422505c02",
+        "0x050010d1682a1eb749acc543d82b34c3234a8fbd72c989d8756a0e9ced18c77f",
       abi: [
         {
           type: "impl",
@@ -1803,7 +1803,2077 @@ const deployedContracts = {
     },
     Vendor: {
       address:
-        "0x07c23667ceac7bbeb808d949388f1a9b26925e1c18e281d5b8af9c1bb23c6790",
+        "0x06e6ecddea41fd1000bbd70563c589101f3435a6a76677305ad56466bdd083e6",
+      abi: [
+        {
+          type: "impl",
+          name: "VendorImpl",
+          interface_name: "contracts::Vendor::IVendor",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::Vendor::IVendor",
+          items: [
+            {
+              type: "function",
+              name: "buy_tokens",
+              inputs: [
+                {
+                  name: "eth_amount_wei",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "withdraw",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "sell_tokens",
+              inputs: [
+                {
+                  name: "amount_tokens",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "send_tokens",
+              inputs: [
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount_tokens",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "tokens_per_eth",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "your_token",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "OwnableImpl",
+          interface_name: "openzeppelin::access::ownable::interface::IOwnable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::access::ownable::interface::IOwnable",
+          items: [
+            {
+              type: "function",
+              name: "owner",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer_ownership",
+              inputs: [
+                {
+                  name: "new_owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounce_ownership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "token_address",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::access::ownable::ownable::OwnableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnershipTransferred",
+              type: "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+              kind: "nested",
+            },
+            {
+              name: "OwnershipTransferStarted",
+              type: "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::Vendor::Vendor::BuyTokens",
+          kind: "struct",
+          members: [
+            {
+              name: "buyer",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "eth_amount",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+            {
+              name: "tokens_amount",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::Vendor::Vendor::SellTokens",
+          kind: "struct",
+          members: [
+            {
+              name: "seller",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "tokens_amount",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+            {
+              name: "eth_amount",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::Vendor::Vendor::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnableEvent",
+              type: "openzeppelin::access::ownable::ownable::OwnableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "BuyTokens",
+              type: "contracts::Vendor::Vendor::BuyTokens",
+              kind: "nested",
+            },
+            {
+              name: "SellTokens",
+              type: "contracts::Vendor::Vendor::SellTokens",
+              kind: "nested",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  sepolia: {
+    YourContract: {
+      address:
+        "0x06a6ffc8de2eb73c186cc80086c7897d53db0f9757c8bdc5d9fea596136b6c9a",
+      abi: [
+        {
+          type: "impl",
+          name: "YourContractImpl",
+          interface_name: "contracts::YourContract::IYourContract",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::YourContract::IYourContract",
+          items: [
+            {
+              type: "function",
+              name: "gretting",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "set_gretting",
+              inputs: [
+                {
+                  name: "new_greeting",
+                  type: "core::byte_array::ByteArray",
+                },
+                {
+                  name: "amount_eth",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "withdraw",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "premium",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "OwnableImpl",
+          interface_name: "openzeppelin::access::ownable::interface::IOwnable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::access::ownable::interface::IOwnable",
+          items: [
+            {
+              type: "function",
+              name: "owner",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer_ownership",
+              inputs: [
+                {
+                  name: "new_owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounce_ownership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::access::ownable::ownable::OwnableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnershipTransferred",
+              type: "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+              kind: "nested",
+            },
+            {
+              name: "OwnershipTransferStarted",
+              type: "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::YourContract::YourContract::GreetingChanged",
+          kind: "struct",
+          members: [
+            {
+              name: "greeting_setter",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_greeting",
+              type: "core::byte_array::ByteArray",
+              kind: "key",
+            },
+            {
+              name: "premium",
+              type: "core::bool",
+              kind: "data",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::YourContract::YourContract::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnableEvent",
+              type: "openzeppelin::access::ownable::ownable::OwnableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "GreetingChanged",
+              type: "contracts::YourContract::YourContract::GreetingChanged",
+              kind: "nested",
+            },
+          ],
+        },
+      ],
+    },
+    Pepe: {
+      address:
+        "0x071e513d0329fdf39eceba4ed067436627f5471fda301dce9272e9065142e758",
+      abi: [
+        {
+          type: "impl",
+          name: "MockTokenImpl",
+          interface_name: "contracts::MockToken::IMockToken",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::MockToken::IMockToken",
+          items: [
+            {
+              type: "function",
+              name: "faucet",
+              inputs: [
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "ERC20Impl",
+          interface_name: "openzeppelin::token::erc20::interface::IERC20",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::token::erc20::interface::IERC20",
+          items: [
+            {
+              type: "function",
+              name: "total_supply",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balance_of",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "allowance",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "spender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer",
+              inputs: [
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "transfer_from",
+              inputs: [
+                {
+                  name: "sender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "approve",
+              inputs: [
+                {
+                  name: "spender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "ERC20MetadataImpl",
+          interface_name:
+            "openzeppelin::token::erc20::interface::IERC20Metadata",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::token::erc20::interface::IERC20Metadata",
+          items: [
+            {
+              type: "function",
+              name: "name",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "symbol",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "decimals",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u8",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "ERC20CamelOnlyImpl",
+          interface_name:
+            "openzeppelin::token::erc20::interface::IERC20CamelOnly",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::token::erc20::interface::IERC20CamelOnly",
+          items: [
+            {
+              type: "function",
+              name: "totalSupply",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balanceOf",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transferFrom",
+              inputs: [
+                {
+                  name: "sender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "symbol",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "initial_supply",
+              type: "core::integer::u256",
+            },
+            {
+              name: "recipient",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Transfer",
+          kind: "struct",
+          members: [
+            {
+              name: "from",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Approval",
+          kind: "struct",
+          members: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "spender",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Transfer",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Transfer",
+              kind: "nested",
+            },
+            {
+              name: "Approval",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Approval",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::MockToken::MockToken::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "ERC20Event",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+    },
+    Nadai: {
+      address:
+        "0x0216c9250040879237f4ee0a073f03705128caedde72cc0921f21e7ef7e57cc7",
+      abi: [
+        {
+          type: "impl",
+          name: "MockTokenImpl",
+          interface_name: "contracts::MockToken::IMockToken",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::MockToken::IMockToken",
+          items: [
+            {
+              type: "function",
+              name: "faucet",
+              inputs: [
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "ERC20Impl",
+          interface_name: "openzeppelin::token::erc20::interface::IERC20",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::token::erc20::interface::IERC20",
+          items: [
+            {
+              type: "function",
+              name: "total_supply",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balance_of",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "allowance",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "spender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer",
+              inputs: [
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "transfer_from",
+              inputs: [
+                {
+                  name: "sender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "approve",
+              inputs: [
+                {
+                  name: "spender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "ERC20MetadataImpl",
+          interface_name:
+            "openzeppelin::token::erc20::interface::IERC20Metadata",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::token::erc20::interface::IERC20Metadata",
+          items: [
+            {
+              type: "function",
+              name: "name",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "symbol",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "decimals",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u8",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "ERC20CamelOnlyImpl",
+          interface_name:
+            "openzeppelin::token::erc20::interface::IERC20CamelOnly",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::token::erc20::interface::IERC20CamelOnly",
+          items: [
+            {
+              type: "function",
+              name: "totalSupply",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balanceOf",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transferFrom",
+              inputs: [
+                {
+                  name: "sender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "symbol",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "initial_supply",
+              type: "core::integer::u256",
+            },
+            {
+              name: "recipient",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Transfer",
+          kind: "struct",
+          members: [
+            {
+              name: "from",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Approval",
+          kind: "struct",
+          members: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "spender",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Transfer",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Transfer",
+              kind: "nested",
+            },
+            {
+              name: "Approval",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Approval",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::MockToken::MockToken::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "ERC20Event",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+    },
+    Scaffold: {
+      address:
+        "0x0465ba1b1d51e312b2dda42e3fe6f1d24a54402c200ab1bcb8a82566f52d8aa9",
+      abi: [
+        {
+          type: "impl",
+          name: "MockTokenImpl",
+          interface_name: "contracts::MockToken::IMockToken",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::MockToken::IMockToken",
+          items: [
+            {
+              type: "function",
+              name: "faucet",
+              inputs: [
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "ERC20Impl",
+          interface_name: "openzeppelin::token::erc20::interface::IERC20",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::token::erc20::interface::IERC20",
+          items: [
+            {
+              type: "function",
+              name: "total_supply",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balance_of",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "allowance",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "spender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer",
+              inputs: [
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "transfer_from",
+              inputs: [
+                {
+                  name: "sender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "approve",
+              inputs: [
+                {
+                  name: "spender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "ERC20MetadataImpl",
+          interface_name:
+            "openzeppelin::token::erc20::interface::IERC20Metadata",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::token::erc20::interface::IERC20Metadata",
+          items: [
+            {
+              type: "function",
+              name: "name",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "symbol",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "decimals",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u8",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "ERC20CamelOnlyImpl",
+          interface_name:
+            "openzeppelin::token::erc20::interface::IERC20CamelOnly",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::token::erc20::interface::IERC20CamelOnly",
+          items: [
+            {
+              type: "function",
+              name: "totalSupply",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balanceOf",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transferFrom",
+              inputs: [
+                {
+                  name: "sender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "symbol",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "initial_supply",
+              type: "core::integer::u256",
+            },
+            {
+              name: "recipient",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Transfer",
+          kind: "struct",
+          members: [
+            {
+              name: "from",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Approval",
+          kind: "struct",
+          members: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "spender",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Transfer",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Transfer",
+              kind: "nested",
+            },
+            {
+              name: "Approval",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Approval",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::MockToken::MockToken::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "ERC20Event",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+    },
+    YourToken: {
+      address:
+        "0x00576411169f05b4d0b62d2ea986228e8422c2432a46a5b1a8fcbf4965de5dff",
+      abi: [
+        {
+          type: "impl",
+          name: "IYourTokenImpl",
+          interface_name: "contracts::YourToken::IYourToken",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::YourToken::IYourToken",
+          items: [
+            {
+              type: "function",
+              name: "faucet",
+              inputs: [
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "balance_of",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "total_supply",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer",
+              inputs: [
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "approve",
+              inputs: [
+                {
+                  name: "spender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "transfer_from",
+              inputs: [
+                {
+                  name: "sender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "allowance",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "spender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "ERC20MetadataImpl",
+          interface_name:
+            "openzeppelin::token::erc20::interface::IERC20Metadata",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin::token::erc20::interface::IERC20Metadata",
+          items: [
+            {
+              type: "function",
+              name: "name",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "symbol",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "decimals",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u8",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "symbol",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "fixed_supply",
+              type: "core::integer::u256",
+            },
+            {
+              name: "recipient",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Transfer",
+          kind: "struct",
+          members: [
+            {
+              name: "from",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Approval",
+          kind: "struct",
+          members: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "spender",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin::token::erc20::erc20::ERC20Component::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Transfer",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Transfer",
+              kind: "nested",
+            },
+            {
+              name: "Approval",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Approval",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::YourToken::YourToken::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "ERC20Event",
+              type: "openzeppelin::token::erc20::erc20::ERC20Component::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+    },
+    Vendor: {
+      address:
+        "0x0501c92ca1f2102fe06a9782a11299e19bee0c93cb483ac4309b05840e1963e8",
       abi: [
         {
           type: "impl",

@@ -1,32 +1,32 @@
 {
   "YourContract": {
     "classHash": "0x735a1a6d33d0f22acb73a19d41ab074f48d8674e43f1318462547fa64454b62",
-    "address": "0x079bd7eeab6278b669f4c6b97892425dde55a6ee898228e444a2c2d756ce1fc3",
+    "address": "0x050c5000a344ed5b66c6a6c27e834f13082cacd064503d01ea7c55c6bc0ca5f1",
     "contract": "YourContract"
   },
   "Pepe": {
     "classHash": "0x5be7477e2a278597de75b104f26cc5b90bcc7316f9c0b39c259f25ecc052775",
-    "address": "0x07ce5f38e80fe968f69d680cddd6b538522032642e3288bdc4f49a7db7d34dbe",
+    "address": "0x039abe13d8b3a9954ee64b096a25179037e8cf489e1e9dc2418dea72ab7bec99",
     "contract": "MockToken"
   },
   "Nadai": {
     "classHash": "0x5be7477e2a278597de75b104f26cc5b90bcc7316f9c0b39c259f25ecc052775",
-    "address": "0x04a97ad381f55ff330822d2e2483a2a8988e1c14c7e6102dede66323ada188bb",
+    "address": "0x02f2cd2ff996f35b911a8d9a3e72b0f73db56cefd527b699fcddfcee8fd47733",
     "contract": "MockToken"
   },
   "Scaffold": {
     "classHash": "0x5be7477e2a278597de75b104f26cc5b90bcc7316f9c0b39c259f25ecc052775",
-    "address": "0x0482cd4945c5ec9c0556b076d854fcf3cdb85ad183701a252b634f2f0511c855",
+    "address": "0x0411806a050e19e2b59e32aa25622fa48ea43ec4d8b55d087e15cf9156184b1e",
     "contract": "MockToken"
   },
   "YourToken": {
     "classHash": "0x43d707cebf8b6e895f405a9e433fec1179849f53193ad7dd0fe2cffa93388ba",
-    "address": "0x050010d1682a1eb749acc543d82b34c3234a8fbd72c989d8756a0e9ced18c77f",
+    "address": "0x02bc3f5fd825590982553c40f2a6502729b9df4e22743e2adc89a51422505c02",
     "contract": "YourToken"
   },
   "Vendor": {
     "classHash": "0x797bcd611cb92759a244de004be367a012a863b676c3184a868010d5029d97d",
-    "address": "0x06e6ecddea41fd1000bbd70563c589101f3435a6a76677305ad56466bdd083e6",
+    "address": "0x07c23667ceac7bbeb808d949388f1a9b26925e1c18e281d5b8af9c1bb23c6790",
     "contract": "Vendor"
   }
 }

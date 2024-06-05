@@ -223,7 +223,7 @@ const Home: NextPage = () => {
           className="mt-8 px-6 py-3 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-75 flex items-center"
         >
           <span role="img" aria-label="elephant" className="mr-2">🐘</span>
-          Mint 500 Nai + 50 Scaffold + 5 Pepe
+          Mint 500 Nai + 50 Pepe + 5 Scaffold
         </button>
         <div className="flex flex-col items-center w-1/2">
             <p className="block text-xl mt-0 mb-1 font-semibold">You Nai Balance</p>

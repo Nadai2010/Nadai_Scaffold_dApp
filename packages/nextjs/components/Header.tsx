@@ -21,7 +21,7 @@ export const menuLinks: HeaderMenuLink[] = [
     href: "/",
   },
   {
-    label: "GOLD - Vendora",
+    label: "GOLD - Vendor",
     href: "/vendor",
     icon: <WalletIcon className="h-4 w-4" />,
   },

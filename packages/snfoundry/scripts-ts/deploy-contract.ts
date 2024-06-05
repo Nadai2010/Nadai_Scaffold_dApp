@@ -90,7 +90,7 @@ const deployContract = async (
     totalFee = 500000000000000n;
   }
 
-  totalFee = options?.maxFee || totalFee * 20n; // this optional max fee serves when error AccountValidation Failed or small fee on public networks , try 5n , 10n, 20n, 50n, 100n
+  totalFee = options?.maxFee || totalFee * 5n; // this optional max fee serves when error AccountValidation Failed or small fee on public networks , try 5n , 10n, 20n, 50n, 100n
 
   try {
     const tryDeclareAndDeploy = await deployer.declareAndDeploy(
